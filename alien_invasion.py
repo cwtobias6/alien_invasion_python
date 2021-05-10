@@ -7,7 +7,6 @@ from bullet import Bullet
 class AlienInvasion():
 	""" A class to manage game assets and behavior """
 
-
 	def __init__(self):
 		""" Init game, and create game resources """
 		pygame.init()
@@ -19,25 +18,14 @@ class AlienInvasion():
 		self.ship = Ship(self)
 		self.bullets = pygame.sprite.Group()
 
-		self.bullets = pygame.sprite.Group()
-
-
 	def run_game(self):
 		""" Start the main loop for the game """
 		while True:
 			self._check_events()
 			self._update_screen()
-<<<<<<< HEAD
-			self._update_bullets()
-			self.ship.update()
-=======
 			self.bullets.update()
 			self.ship.update()
 			self._update_bullets()
-
->>>>>>> alien_invasion2
-
-
 
 	def _check_events(self):
 		# Watch for keyboard and mouse events
@@ -48,7 +36,6 @@ class AlienInvasion():
 					self._check_keydown_events(event)
 				elif event.type == pygame.KEYUP:
 					self._check_keyup_events(event)
-<<<<<<< HEAD
 
 	def _check_keydown_events(self,event):
 		if event.key == pygame.K_RIGHT:
@@ -56,21 +43,16 @@ class AlienInvasion():
 			self.ship.moving_right = True
 		elif event.key == pygame.K_LEFT:
 			self.ship.rect.x -= 1
-=======
 					
 	def _check_keydown_events(self, event):
 		if event.key == pygame.K_RIGHT:
 			self.ship.moving_right = True
 		elif event.key == pygame.K_LEFT:
->>>>>>> alien_invasion2
 			self.ship.moving_left = True
 		elif event.key == pygame.K_q:
 			sys.exit()
 		elif event.key == pygame.K_SPACE:
 			self._fire_bullet()
-
-<<<<<<< HEAD
-
 
 	def _check_keyup_events(self,event):
 		if event.key == pygame.K_RIGHT:
@@ -97,7 +79,6 @@ class AlienInvasion():
 			if bullet.rect.bottom <=0:
 				self.bullets.remove(bullet)
 
-=======
 	def _fire_bullet(self):
 		if  len(self.bullets) < self.settings.bullets_allowed:
 			new_bullet = Bullet(self)
@@ -122,7 +103,6 @@ class AlienInvasion():
 		# Redraw the screen during each pass through the loop.
 			self.screen.fill(self.settings.bg_color)
 			self.ship.blitme()
->>>>>>> alien_invasion2
 
 			for bullet in self.bullets:
 				bullet.draw_bullet()

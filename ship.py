@@ -19,16 +19,11 @@ class Ship():
 		# Store a decimal value for the ship's horizontal position.
 		self.x = float(self.rect.x)
 
-<<<<<<< HEAD
-		# Movement Flag
-=======
+
 		# Moving Flags
->>>>>>> alien_invasion2
 		self.moving_right = False
 		self.moving_left = False
 
-
-<<<<<<< HEAD
 	def update(self):
 		""" Update ship's movement based on Movement Flag """
 		if self.moving_right and self.rect.right < self.screen_rect.right:
@@ -38,8 +33,6 @@ class Ship():
 
 		self.rect.x = self.x
 
-=======
->>>>>>> alien_invasion2
 	def blitme(self):
 		""" Draw ship at current location """
 		self.screen.blit(self.image, self.rect)
